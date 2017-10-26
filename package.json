@@ -1,0 +1,20 @@
+{
+  "name": "find_my_past",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w-schwier/find_my_past.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w-schwier/find_my_past/issues"
+  },
+  "homepage": "https://github.com/w-schwier/find_my_past#readme"
+}
