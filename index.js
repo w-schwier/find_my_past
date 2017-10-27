@@ -1,1 +1,2 @@
-require('./app/index')
+require ('./src/index')
+require ('./src/primeGenerator')
