@@ -10,7 +10,7 @@
         };
         if (prime) this.primes.push(i);
       };
-      console.log(this.primes)
+      console.log(this.primes) // this line can be removed before becoming production code (Just to get visability)
     };
   }
 
