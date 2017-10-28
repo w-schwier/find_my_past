@@ -1,2 +1,3 @@
-require ('./src/index')
-require ('./src/primeGenerator')
+require ('./src/primeGenerator');
+
+require ('./src/index');
