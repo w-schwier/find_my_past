@@ -2,8 +2,8 @@
 
   var tableGenerator = new TableGenerator();
 
-  // (function() {
-  //   assert.isTrue(tableGenerator.???())
-  // })();
+  (function() {
+    assert.isTrue(tableGenerator.finishedTable === [])
+  })();
 
 })();
