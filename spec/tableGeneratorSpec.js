@@ -3,7 +3,7 @@
   var tableGenerator = new TableGenerator();
 
   (function() {
-    assert.isTrue(tableGenerator.finishedTable === [])
+    assert.arraysEqual(tableGenerator.finishedTable, [])
   })();
 
 })();
