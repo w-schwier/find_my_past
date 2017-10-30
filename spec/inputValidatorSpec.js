@@ -38,5 +38,4 @@
     assert.isFalse(inputValidator.check("f"))
   })();
 
-
 })();

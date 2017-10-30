@@ -1,8 +1,7 @@
 (function(exports) {
   function InputValidator() {
     this.check = function(x) {
-      var number = parseInt(x);
-      return (number > 0);
+      return (x > 0 && Number.isInteger(x));
     };
   };
 
