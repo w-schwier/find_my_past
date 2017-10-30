@@ -1,8 +1,10 @@
 const rL = require('readline');
 const iV = require('./src/inputValidator');
 const pG = require('./src/primeGenerator');
-var primeGen = new pG.PrimeGenerator();
+const tG = require('./src/tableGenerator')
 var inputVal = new iV.InputValidator();
+var primeGen = new pG.PrimeGenerator();
+var tableGen = new tG.TableGenerator();
 
 var readline = rL.createInterface({
   input: process.stdin,
