@@ -29,5 +29,38 @@
     return multiArray;
   };
 
+  TableGenerator.prototype.multiplyArray2 = function (primes) {
+    var result = 'X ';
+    var headingArray = this.formatArray(primes)
+    var size = primes.length;
+    for (i = 0; i < size; i++) {
+      for(j = 0; j < size; j++){
+        if (i == 0 && j > 0 ) {
+          result += '[' + headingArray[j] + ']';
+        } else if (j == 0 && i > 0) {
+          result += '[' + headingArray[i] + '] ';
+        } else if (i>0 && j>0){
+          result += (primes[i]*primes[j]) + ' ';
+        };
+      };
+      result += '\n'
+    };
+    return result;
+    console.log(result);
+
+  };
+
+  TableGenerator.prototype.multiplyArray3 = function (primes) {
+    var multiArray = [];
+    var size = primes.length;
+    for (i = 0; i < size; i++) {
+      multiArray[i] = [];
+      for(j = 0; j < size; j++){
+        multiArray[i][j] = primes[i] * primes[j];
+      };
+    };
+    return multiArray;
+  };
+
   exports.TableGenerator = TableGenerator;
 })(this);

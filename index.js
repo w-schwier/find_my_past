@@ -11,20 +11,20 @@ var readline = rL.createInterface({
   output: process.stdout
 });
 
-  execute = function() {
-    readline.question("Please give a value for n (number of primes) ", function(n) {
-      if (inputVal.check(n)) {
-        readline.close();
-        primeGen.run(n)
-        console.log("starting table generation")
-        console.time("time taken: ");
-        tableGen.multiplyArray(primeGen.primes);
-        console.timeEnd("time taken: ");
-      } else {
-        console.log("Please try again with a whole number thats at least 1...")
-        execute()
-      };
-    });
-  };
+execute = function() {
+  readline.question("Please give a value for n (number of primes) ", function(n) {
+    if (inputVal.check(n)) {
+      readline.close();
+      primeGen.run(n)
+      console.log("starting table generation")
+      console.time("time taken: ");
+      tableGen.multiplyArray(primeGen.primes);
+      console.timeEnd("time taken: ");
+    } else {
+      console.log("Please try again with a whole number thats at least 1...")
+      execute()
+    };
+  });
+};
 
 execute();

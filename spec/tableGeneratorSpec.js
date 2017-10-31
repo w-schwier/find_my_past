@@ -19,4 +19,9 @@
     assert.multiArraysEqual(tableGenerator.multiplyArray(testArray), multiArray);
   })();
 
+  // (function() {
+  //   var multiArray = [["X", 2, 3, 5], [2, 4, 6, 10], [3, 6, 9, 15], [5, 10, 15, 25]]
+  //   var finishedTable = ""
+  // })();
+
 })();
