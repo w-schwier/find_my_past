@@ -3,6 +3,11 @@
     this.finishedTable = [];
   };
 
+  TableGenerator.prototype.formatArray = function (array) {
+    return array.unshift('X')
+
+  };
+
   TableGenerator.prototype.multiplyArray = function (primes) {
     var multiArray = [];
     var size = primes.length;
