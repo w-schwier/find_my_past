@@ -16,7 +16,10 @@ var readline = rL.createInterface({
       if (inputVal.check(n)) {
         readline.close();
         primeGen.run(n)
-        console.log(primeGen.primes);
+        console.log("starting table generation")
+        console.time("time taken: ");
+        tableGen.multiplyArray(primeGen.primes);
+        console.timeEnd("time taken: ");
       } else {
         console.log("Please try again with a whole number thats at least 1...")
         execute()

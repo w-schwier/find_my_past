@@ -26,7 +26,6 @@
         };
       };
     };
-    debugger;
     return multiArray;
   };
 
