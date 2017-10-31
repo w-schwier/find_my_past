@@ -6,6 +6,11 @@
     assert.arraysEqual(tableGenerator.finishedTable, [])
   })();
 
+  (function() {
+    var testArray = [2, 3, 5]
+    var result = ['X', 2, 3, 5]
+    assert.arraysEqual(tableGenerator.formatArray(testArray), result)
+  })();
 
 
   (function() {
