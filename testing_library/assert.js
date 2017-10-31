@@ -62,6 +62,14 @@ var assert = {
     } else {
       console.error("Assertion Failed: " + array1 + " Does not Equal " + array2);
     }
+  },
+
+  multiArraysEqual: function(array1, array2) {
+    if (multiArraysMatch(array1, array2)) {
+      console.log(array1 + " is the same as " + array2);
+    } else {
+      console.error("Assertion Failed: " + array1 + " Does not Equal " + array2);
+    }
   }
 };
 
@@ -69,6 +77,17 @@ arraysMatch = function(array1, array2) {
   var arraysMatched = true
   for (var i = 0; i < array1.length; ++i) {
     if (array1[i] !== array2[i]) {
+      arraysMatched = false;
+    }
+  }
+  return arraysMatched;
+}
+
+multiArraysMatch = function(array1, array2) {
+  var arraysMatched = true
+  for (var i = 0; i < array1.length; i++) {
+    for (var j = 0; j < array1.length; j++)
+    if (array1[i][j] !== array2[i][j]) {
       arraysMatched = false;
     }
   }
