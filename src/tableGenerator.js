@@ -45,21 +45,8 @@
       };
       result += '\n'
     };
-    return result;
     console.log(result);
-
-  };
-
-  TableGenerator.prototype.multiplyArray3 = function (primes) {
-    var multiArray = [];
-    var size = primes.length;
-    for (i = 0; i < size; i++) {
-      multiArray[i] = [];
-      for(j = 0; j < size; j++){
-        multiArray[i][j] = primes[i] * primes[j];
-      };
-    };
-    return multiArray;
+    return result;
   };
 
   exports.TableGenerator = TableGenerator;

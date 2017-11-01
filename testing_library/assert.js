@@ -3,15 +3,15 @@ var assert = {
     if (!assertionToCheck) {
       console.error("Assertion failed: " + assertionToCheck + " is not truthy");
     } else {
-      console.log("Truthy PASSED");
+      console.log("Truthy PASSED: " + message);
     }
   },
 
-  isFalse: function(assertionToCheck) {
+  isFalse: function(assertionToCheck, message) {
     if( assertionToCheck ) {
       console.error("Assertion failed: " + assertionToCheck + " is not falsey");
     } else {
-      console.log('Falsey PASSED');
+      console.log('Falsey PASSED: ' + message);
     }
   },
 

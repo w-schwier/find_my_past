@@ -18,7 +18,7 @@ execute = function() {
       primeGen.run(n)
       console.log("starting table generation")
       console.time("time taken: ");
-      tableGen.multiplyArray(primeGen.primes);
+      console.log(tableGen.multiplyArray2(primeGen.primes));
       console.timeEnd("time taken: ");
     } else {
       console.log("Please try again with a whole number thats at least 1...")
