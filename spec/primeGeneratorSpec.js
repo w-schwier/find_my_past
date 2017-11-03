@@ -9,13 +9,21 @@
     assert.isTrue(primeGenerator.check(7))
   })();
 
-  // (function() {
-  //   assert.isFalse(primeGenerator.check(0))
-  // })();
-  //
-  // (function() {
-  //   assert.isFalse(primeGenerator.check(-4))
-  // })();
+  (function() {
+    assert.isFalse(primeGenerator.check(0))
+  })();
+
+  (function() {
+    assert.isFalse(primeGenerator.check(-4))
+  })();
+
+  (function() {
+    assert.isFalse(primeGenerator.run(0))
+  })();
+
+  (function() {
+    assert.isFalse(primeGenerator.run(-4))
+  })();
 
   (function() {
     primeGenerator.run(3)

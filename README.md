@@ -41,6 +41,8 @@ All the above was achieved using TDD to structure the code.
 
 ### Challenges and Success
 
+When checking my prime checker function returned false for zero and negative numbers, I realised this was not the case. To over come this problem I implemented my inputValidator module and threw an error if the number entered was zero or less, however, due to the fact I'm using a testing library I wrote, there was not a test to check if an error had been thrown. This meant that there are no tests for these edge cases throwing an error, but there are guard clauses which have been tested in person. When running the tests you can see the alerts in the console window. There are a few solutions to this problem. One is implementing another framework such as Jasmine, another is writing a test that checked for alerts.
+
 Although the prime number generator can work beyond 20,000 numbers, the table generator can only handle 8,000 slowly. Another limitation is logging to the console as it only displays the table in a nice format up to a very small size.
 
 ### Future Improvements
