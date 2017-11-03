@@ -1,6 +1,5 @@
 (function(exports) {
   function TableGenerator() {
-    this.finishedTable = [];
   };
 
   TableGenerator.prototype.makeHeader = function (array) {
@@ -18,6 +17,11 @@
       };
     };
     return multiples;
+  };
+
+  TableGenerator.prototype.formatArray = function (primes, multiArray) {
+    var headingArray = this.makeHeader(primes)
+
   };
 
 

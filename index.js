@@ -1,9 +1,11 @@
 const rL = require('readline');
 const iV = require('./src/inputValidator');
 const pG = require('./src/primeGenerator');
-const tG = require('./src/tableGenerator')
+const aM = require('.src/arrayMultiplier');
+const tG = require('./src/tableGenerator');
 var inputVal = new iV.InputValidator();
 var primeGen = new pG.PrimeGenerator();
+var arrayMultiplier = new aM.ArrayMultiplier();
 var tableGen = new tG.TableGenerator();
 
 var readline = rL.createInterface({
