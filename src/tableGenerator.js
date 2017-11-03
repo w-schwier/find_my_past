@@ -30,24 +30,32 @@
   };
 
   TableGenerator.prototype.multiplyArray2 = function (primes) {
-    var result = 'X ';
+    var result = 'X   ';
     var headingArray = this.formatArray(primes)
     var size = primes.length;
     for (i = 0; i < size; i++) {
       for(j = 0; j < size; j++){
         if (i == 0 && j > 0 ) {
-          result += '[' + headingArray[j] + ']';
+          result += '[' + headingArray[j] + ']' + buff((headingArray[j]+'').length+2);
         } else if (j == 0 && i > 0) {
           result += '[' + headingArray[i] + '] ';
         } else if (i>0 && j>0){
-          result += (primes[i]*primes[j]) + ' ';
+          var value = (primes[i]*primes[j])
+          result += buff((value+'').length ) + value;
         };
       };
       result += '\n'
     };
-    console.log(result);
     return result;
   };
 
   exports.TableGenerator = TableGenerator;
 })(this);
+
+function buff(val){
+  var buff = '';
+  var pad = 4 - val;
+    while( pad-- > 0 )
+            buff += ' ';
+  return buff;
+}
