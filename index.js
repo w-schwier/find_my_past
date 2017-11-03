@@ -1,7 +1,7 @@
 const rL = require('readline');
 const iV = require('./src/inputValidator');
 const pG = require('./src/primeGenerator');
-const aM = require('.src/arrayMultiplier');
+const aM = require('./src/arrayMultiplier');
 const tG = require('./src/tableGenerator');
 var inputVal = new iV.InputValidator();
 var primeGen = new pG.PrimeGenerator();
@@ -20,9 +20,13 @@ execute = function() {
       console.time("Time taken to generate primes: ");
       primeGen.run(n)
       console.timeEnd("Time taken to generate primes: ");
-      // console.time("Time taken to create table: ");
-      // tableGen.multiplyArray2(primeGen.primes);
-      // console.timeEnd("Time taken to create table: ");
+      console.time("Time taken to multiply primes: ");
+      var primes = primeGen.primes
+      var multiples = arrayMultiplier.run(primes);
+      console.timeEnd("Time taken to multiply primes: ");
+      console.time("Time taken to format table: ");
+      tableGen.run(primes, multiples)
+      console.timeEnd("Time taken to format table: ");
     } else {
       console.log("Please try again with a whole number that's at least 1...")
       execute()
@@ -31,4 +35,3 @@ execute = function() {
 };
 
 execute();
-// console.log(tableGen.multiplyArray2(primeGen.primes));

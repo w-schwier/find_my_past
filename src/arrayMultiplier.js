@@ -2,7 +2,7 @@
   function ArrayMultiplier() {
   };
 
-  ArrayMultiplier.prototype.multiplyArray = function (primes) {
+  ArrayMultiplier.prototype.run = function (primes) {
     var multiples = [];
     var size = primes.length;
     for (i = 0; i < size; i++) {

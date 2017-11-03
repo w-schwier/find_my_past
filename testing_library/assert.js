@@ -15,9 +15,9 @@ var assert = {
     }
   },
 
-  isEqual: function(actual, expected) {
+  isEqual: function(actual, expected, message) {
     if (actual === expected) {
-      console.log(actual + ' equals ' + expected);
+      console.log(actual + ' equals ' + expected + ": " + message);
     } else {
       console.error("Expected " + expected + " but got " + actual);
     }
@@ -56,17 +56,17 @@ var assert = {
   },
 
 
-  arraysEqual: function(array1, array2) {
+  arraysEqual: function(array1, array2, message) {
     if (arraysMatch(array1, array2)) {
-      console.log(array1 + " is the same as " + array2);
+      console.log(array1 + " is the same as " + array2 + ": " + message);
     } else {
       console.error("Assertion Failed: " + array1 + " Does not Equal " + array2);
     }
   },
 
-  multiArraysEqual: function(array1, array2) {
+  multiArraysEqual: function(array1, array2,message) {
     if (multiArraysMatch(array1, array2)) {
-      console.log(array1 + " is the same as " + array2);
+      console.log(array1 + " is the same as " + array2 + ": " + message);
     } else {
       console.error("Assertion Failed: " + array1 + " Does not Equal " + array2);
     }

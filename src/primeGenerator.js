@@ -31,6 +31,7 @@ const startingNumber = 2;
   exports.PrimeGenerator = PrimeGenerator;
 })(this);
 
-function isValid(x){
+function isValid(input){
+  var x = parseFloat(input)
   return (x > 0 && Number.isInteger(x));
 }
