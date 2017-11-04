@@ -26,8 +26,8 @@
     for (i=0;i<size;i++) {
       for (j=0;j<size;j++) {
         if(i==0 &&j==0) {
-          var initialSpaces = Number.parseInt(cellLength/2)
-          var postSpaces = cellLength - initialSpaces - multiArray[0][0].length
+          var initialSpaces = Number.parseInt((cellLength-1)/2)
+          var postSpaces = (cellLength-1) - initialSpaces
           finishedTable +=  "|" + buff(initialSpaces) + multiArray[0][0] + buff(postSpaces) + "|"
         } else if (i==0 && j>0){
           var numberLength = multiArray[0][j].length;
@@ -55,7 +55,6 @@
     };
     console.log(finishedTable)
     return finishedTable
-
   };
 
   TableGenerator.prototype.run = function (primes, multiples) {
@@ -67,13 +66,5 @@
 })(this);
 
 function buff(times) {
-    return new Array(times + 1).join(' ');
+  return new Array(times + 1).join(' ');
 }
-
-// function buff(val){
-//   var buff = '';
-//   var pad = 4 - val;
-//     while( pad-- > 0 )
-//             buff += ' ';
-//   return buff;
-// }
