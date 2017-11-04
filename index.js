@@ -17,6 +17,23 @@ execute = function() {
   readline.question("Please give a value for n (number of primes) ", function(n) {
     if (inputVal.check(n)) {
       readline.close();
+      primeGen.run(n)
+      var primes = primeGen.primes
+      var multiples = arrayMultiplier.run(primes);
+      tableGen.run(primes, multiples)
+    } else {
+      console.log("Please try again with a whole number that's at least 1...")
+      execute()
+    };
+  });
+};
+
+execute();
+
+executeTiming = function() {
+  readline.question("Please give a value for n (number of primes) ", function(n) {
+    if (inputVal.check(n)) {
+      readline.close();
       console.time("Time taken to generate primes: ");
       primeGen.run(n)
       console.timeEnd("Time taken to generate primes: ");
@@ -33,5 +50,3 @@ execute = function() {
     };
   });
 };
-
-execute();
