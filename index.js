@@ -21,6 +21,7 @@ execute = function() {
       var primes = primeGen.primes
       var multiples = arrayMultiplier.run(primes);
       tableGen.run(primes, multiples)
+      console.log(tableGen.finishedTable);
     } else {
       console.log("Please try again with a whole number that's at least 1...")
       execute()
@@ -43,6 +44,7 @@ executeTiming = function() {
       console.timeEnd("Time taken to multiply primes: ");
       console.time("Time taken to format table: ");
       tableGen.run(primes, multiples)
+      console.log(tableGen.finishedTable);
       console.timeEnd("Time taken to format table: ");
     } else {
       console.log("Please try again with a whole number that's at least 1...")

@@ -1,5 +1,6 @@
 (function(exports) {
   function TableGenerator() {
+    this.finishedTable = "";
   };
 
   TableGenerator.prototype.makeHeader = function (array) {
@@ -20,50 +21,42 @@
   };
 
   TableGenerator.prototype.makeTable = function (multiArray) {
-    var finishedTable = "";
     var cellLength = multiArray[multiArray.length-1][0].length + 2
     var size = multiArray.length
     for (i=0;i<size;i++) {
       for (j=0;j<size;j++) {
-        if(i==0 &&j==0) {
-          var initialSpaces = Number.parseInt((cellLength-1)/2)
-          var postSpaces = (cellLength-1) - initialSpaces
-          finishedTable +=  "|" + buff(initialSpaces) + multiArray[0][0] + buff(postSpaces) + "|"
-        } else if (i==0 && j>0){
-          var numberLength = multiArray[0][j].length;
-          var spaces = cellLength - numberLength;
-          var initialSpaces = Number.parseInt(spaces/2)
-          var postSpaces = spaces - initialSpaces
-          finishedTable += buff(initialSpaces) + multiArray[0][j] + buff(postSpaces) + "|"
-        } else if (j==0 && i>0) {
-          var numberLength = multiArray[0][i].length;
-          var spaces = cellLength - numberLength;
-          var initialSpaces = Number.parseInt(spaces/2)
-          var postSpaces = spaces - initialSpaces
-          finishedTable += "|" + buff(initialSpaces) + multiArray[i][0] + buff(postSpaces) + "|"
-        } else if (i>0&&j>0) {
-          var num = multiArray[i][j]
-          var numberLength = num.toString().length
-          var spaces = cellLength - numberLength;
-          var initialSpaces = Number.parseInt(spaces/2)
-          var postSpaces = spaces - initialSpaces
-
-          finishedTable += buff(initialSpaces) + multiArray[i][j] + buff(postSpaces) + "|"
+        var number = multiArray[i][j]
+        var numberLength = null;
+        (i>0&&j>0) ? numberLength = number.toString().length : numberLength = number.length
+        if (j==0) {
+          this.finishedTable += addCell(cellLength, numberLength, number,true)
+        } else if (j>0) {
+          this.finishedTable += addCell(cellLength, numberLength, number,false)
         };
       };
-      finishedTable += '\n'
+      this.finishedTable += '\n'
     };
-    console.log(finishedTable)
-    return finishedTable
   };
 
   TableGenerator.prototype.run = function (primes, multiples) {
     var multiArray = this.formatArray(primes, multiples)
     this.makeTable(multiArray);
+    return this.finishedTable
   };
 
   exports.TableGenerator = TableGenerator;
 })(this);
+
+function addCell(cellLength, numberLength, number, leftCell){
+  var spaces = cellLength - numberLength;
+  var initialSpaces = Number.parseInt(spaces/2)
+  var postSpaces = spaces - initialSpaces
+  if (leftCell == true) {
+    return ("|" + buff(initialSpaces) + number + buff(postSpaces) + "|")
+  } else {
+    return (buff(initialSpaces) + number + buff(postSpaces) + "|")
+  };
+};
 
 function buff(times) {
   return new Array(times + 1).join(' ');
