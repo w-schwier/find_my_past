@@ -3,7 +3,7 @@
 
 ### What is it?
 
-This command line program prompts the user for how many primes they want in the table, the user has to input a whole number N, where is N is at least 1. The app when then calculate the first N primes, then generate and log to the console the resulting multiplication table.
+This command line program prompts the user for how many primes they want in the table, the user has to input a whole number N, where is N is at least 1. The app will then calculate the first N primes, then generate and log to the console the resulting multiplication table.
 
 ### User Stories
 
@@ -43,12 +43,12 @@ All the above was achieved using TDD to structure the code.
 
 When checking my prime checker function returned false for zero and negative numbers, I realised this was not the case. To over come this problem I was going to implement my inputValidator module and throw an error if the number entered was zero or less, however, to make the app work in the console I had to require the files like in the index, but this stopped the tests working. This was something that I overcame by using the same check code used in inputValidator. Given more time time is something I would like to make neater. Using the inputValidator class as this is its very purpose and there is repeated code which goes against agile methodology.
 
-Also due to the fact I'm using a testing library I wrote, there was not a test to check if an error had been thrown. This meant that there are no tests for these edge cases throwing an error, but there are guard clauses which have been tested in person. When running the tests you can see the alerts in the console window. There are a few solutions to this problem. One is implementing another framework such as Jasmine, another is writing a test that checked for alerts.
+Also due to the fact I'm using a testing library I wrote, there was not a test to check if an error had been thrown. This meant that there are no tests for these edge cases throwing an error, but there are guard clauses which have been tested in person and return false. When running the tests you can see the alerts in the console window. There are a few solutions to this problem. One is implementing another framework such as Jasmine, another is writing a test that checked for alerts.
 
 ![errors](screenshots/errors.png)
 
-Although the prime number generator can work beyond 20,000 numbers, the table generator can only handle 8,000 slowly. Another limitation is logging to the console as it only displays the table in a nice format up to a very small size.
+Although the prime number generator can work beyond 20,000 numbers, the table generator can only handle 6,000 slowly. Another limitation is logging to the console as it only displays the table in a nice format up to a very small size.
 
 ### Future Improvements
 
-The console severely limits the size you can print a nicely formatted table. To address this the table could be either written to a document or onto a webpage. I also believe running the app in the console limits the memory, this coupled with the power of Chromes' V8 engine would increase speed and capability of the program.
+The console severely limits the size you can print a nicely formatted table. To address this the table could be either written to a document or onto a webpage. I also believe running the app in the console limits the memory, this coupled with the power of Chromes' V8 engine would increase speed and capability of the program. In future I would like to add a front-end to the application for user input and showing of the table.
