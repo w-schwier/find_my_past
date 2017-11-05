@@ -23,15 +23,30 @@
   TableGenerator.prototype.makeTable = function (multiArray) {
     var cellLength = multiArray[multiArray.length-1][0].length + 2
     var size = multiArray.length
+    this.addCells(multiArray, size, cellLength);
+  };
+
+  TableGenerator.prototype.formatCell = function (cellLength, numberLength, number, leftCell){
+    var spaces = cellLength - numberLength;
+    var initialSpaces = Number.parseInt(spaces/2)
+    var postSpaces = spaces - initialSpaces
+    if (leftCell == true) {
+      this.finishedTable += ("|" + buff(initialSpaces) + number + buff(postSpaces) + "|")
+    } else {
+      this.finishedTable += (buff(initialSpaces) + number + buff(postSpaces) + "|")
+    };
+  };
+
+  TableGenerator.prototype.addCells = function (multiArray, size, cellLength) {
     for (i=0;i<size;i++) {
       for (j=0;j<size;j++) {
         var number = multiArray[i][j]
         var numberLength = null;
         (i>0&&j>0) ? numberLength = number.toString().length : numberLength = number.length
         if (j==0) {
-          this.finishedTable += addCell(cellLength, numberLength, number,true)
+          this.formatCell(cellLength, numberLength, number,true)
         } else if (j>0) {
-          this.finishedTable += addCell(cellLength, numberLength, number,false)
+          this.formatCell(cellLength, numberLength, number,false)
         };
       };
       this.finishedTable += '\n'
@@ -47,16 +62,6 @@
   exports.TableGenerator = TableGenerator;
 })(this);
 
-function addCell(cellLength, numberLength, number, leftCell){
-  var spaces = cellLength - numberLength;
-  var initialSpaces = Number.parseInt(spaces/2)
-  var postSpaces = spaces - initialSpaces
-  if (leftCell == true) {
-    return ("|" + buff(initialSpaces) + number + buff(postSpaces) + "|")
-  } else {
-    return (buff(initialSpaces) + number + buff(postSpaces) + "|")
-  };
-};
 
 function buff(times) {
   return new Array(times + 1).join(' ');
