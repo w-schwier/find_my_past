@@ -37,17 +37,21 @@
     };
   };
 
+  TableGenerator.prototype.determineCellType = function (i, j, number, cellLength) {
+    var numberLength = null;
+    (i>0&&j>0) ? numberLength = number.toString().length : numberLength = number.length
+    if (j==0) {
+      this.formatCell(cellLength, numberLength, number,true)
+    } else if (j>0) {
+      this.formatCell(cellLength, numberLength, number,false)
+    };
+  };
+
   TableGenerator.prototype.addCells = function (multiArray, size, cellLength) {
     for (i=0;i<size;i++) {
       for (j=0;j<size;j++) {
         var number = multiArray[i][j]
-        var numberLength = null;
-        (i>0&&j>0) ? numberLength = number.toString().length : numberLength = number.length
-        if (j==0) {
-          this.formatCell(cellLength, numberLength, number,true)
-        } else if (j>0) {
-          this.formatCell(cellLength, numberLength, number,false)
-        };
+        this.determineCellType(i, j, number, cellLength)
       };
       this.finishedTable += '\n'
     };
